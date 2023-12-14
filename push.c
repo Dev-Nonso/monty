@@ -16,19 +16,25 @@ void f_push(stack_t **head, unsigned int counter)
 		for (; wet.argument[i] != '\0'; i++)
 		{
 			if (wet.argument[i] > 57 || wet.argument[i] < 48)
-				flag = 1; }
+				flag = 1; 
+		}
 		if (flag == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+		{ 
+			fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(wet.file);
 			free(wet.content);
 			free_stack(*head);
-			exit(EXIT_FAILURE); }}
+			exit(EXIT_FAILURE);
+		}
+	}
 	else
-	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+	{
+	       	fprintf(stderr, "L%d: usage: push integer\n", counter);
 		fclose(wet.file);
 		free(wet.content);
 		free_stack(*head);
-		exit(EXIT_FAILURE); }
+		exit(EXIT_FAILURE);
+	}
 	n = atoi(wet.argument);
 	if (wet.fifo == 0)
 		__addnode(head, n);
