@@ -72,6 +72,7 @@ void __addnode(stack_t **head, int n);
 void __addqueue(stack_t **head, int n);
 void free_stack(stack_t *head);
 void f_queue(stack_t **head, unsigned int counter);
+void f_pchar(stack_t **head, unsigned int counter);
 
 
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
